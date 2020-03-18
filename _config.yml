@@ -3,11 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Blog
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+bio: 人穷就应该多努力 
+author: zhangjingjie
 language: en
 timezone: ''
 

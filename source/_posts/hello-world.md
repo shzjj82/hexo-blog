@@ -1,38 +1,13 @@
+title: 作用域是啥？
+date: 2020-03-18 22:53:55
 ---
-title: Hello World11
----
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+作用域是一套规则，用于确定在何处以及如何查找变量（标识符）。如果查找的目的是对变量进行复制，那么就会使用LHS查询，如果目的是获取变量的值，就会使用RHS查询。赋值操作符会导致LHS查询。=操作符或调用函数时传入参数的操作都会导致关联作用域的赋值操作。
 
-## Quick Start
-
-### Create a new post
-
-``` bash
-$ hexo new "My New Post"
+```javascript
+var a = 2;
+// var a 在作用域声明新变量。这会在最开始的阶段，也就是代码执行前进行
+// 接下来，a = 2 会查询（LHS查询）变量a并对其进行赋值
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+LHS和RHS查询都会在当前执行作用于开始，如果有需要（也就是说他们没有找到所需的标识符），就会向上级作用域继续查找目标标识符，这样每次上升一级作用域，最后抵达全局作用于（顶层），无论找到或没有找到都将会停止
+不成功的RHS引用会导致抛出ReferenceError异常。不成功的LHS引用会导致自动隐式的创建一个全局变量（非严格模式下），该变量使用LHS引用的目标作为标识符，或者抛出ReferenceError异常（严格模式下）
