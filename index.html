@@ -1,4 +1,38 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title></title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/hexo-blog/./css/style.css"><link rel="shortcut icon" href="/hexo-blog/./favicon.ico"><link rel="apple-touch-icon" href="/hexo-blog/./apple-touch-icon.png"><meta name="generator" content="Hexo 4.2.0"></head><body><header class="al_header al_pos_fixed"><div class="al_header_container dis_flex_jcenter"><div class="al_header_container_left"><div class="al_header_site_title"><a href="/">Blog</a></div></div><div class="dis_flex_jcenter"><div class="al_header_setting"><svg class="al_header_icon"><use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use></svg></div></div></div></header><div class="al_sidebar"><div class="al_sidebar_overlay al_full_cover"></div><div class="al_pos_fixed al_sidebar_cnt"><div class="dis_flex_acenter al_sidebar_header"><h3>Blog</h3><div class="al_sidebar_close al_header_setting"><svg class="al_header_icon"><use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use></svg></div></div><div class="al_sidebar_author_cnt"><div class="al_sidebar_author_info"><h4>zhangjingjie</h4><img class="al_sidebar_avatar" src="https://yourAvatorURL"><p></p></div></div></div></div><div class="al_index_background dis_flex_center al_full_cover"><div class="al_pos_ab al_letter al_index_background_letter">人</div><h2 class="al_index_background_bio">人穷就应该多努力</h2></div><div class="al_index_container"><div class="al_pos_ab al_fake_background"></div><div class="al_main_container"><div class="al_section_container dis_flex_jcenter"><div class="section_header">LATEST PAGES</div></div><ur class="al_post_list"><li class="al_index_pageList_item al_index_page_seperator"><div class="al_index_post_title_cnt dis_flex"><div class="al_pos_ab al_letter al_index_post_title_letter">函</div><h2 class="al_index_post_title"><a href="/hexo-blog/2020/03/19/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">函数作用域和块级作用域</a></h2><div class="al_index_post_extra dis_flex"><div class="al_index_post_date al_index_post_extra_item">Mar 19</div><div class="al_index_post_read_time">1 Min Read</div></div></div><div class="al_index_post_excerpt_cnt"><p class="al_index_post_excerpt">函数是javascript中最常见的作用域。本质上，声明在一个函数内部的变量或函数会在所处的作用域中’隐藏‘起来。这是有意为之的良好的设计原则。
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title></title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="/hexo-blog/./css/style.css"><link rel="shortcut icon" href="/hexo-blog/./favicon.ico"><link rel="apple-touch-icon" href="/hexo-blog/./apple-touch-icon.png"><meta name="generator" content="Hexo 4.2.0"></head><body><header class="al_header al_pos_fixed"><div class="al_header_container dis_flex_jcenter"><div class="al_header_container_left"><div class="al_header_site_title"><a href="/">Blog</a></div></div><div class="dis_flex_jcenter"><div class="al_header_setting"><svg class="al_header_icon"><use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use></svg></div></div></div></header><div class="al_sidebar"><div class="al_sidebar_overlay al_full_cover"></div><div class="al_pos_fixed al_sidebar_cnt"><div class="dis_flex_acenter al_sidebar_header"><h3>Blog</h3><div class="al_sidebar_close al_header_setting"><svg class="al_header_icon"><use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use></svg></div></div><div class="al_sidebar_author_cnt"><div class="al_sidebar_author_info"><h4>zhangjingjie</h4><img class="al_sidebar_avatar" src="https://yourAvatorURL"><p></p></div></div></div></div><div class="al_index_background dis_flex_center al_full_cover"><div class="al_pos_ab al_letter al_index_background_letter">人</div><h2 class="al_index_background_bio">人穷就应该多努力</h2></div><div class="al_index_container"><div class="al_pos_ab al_fake_background"></div><div class="al_main_container"><div class="al_section_container dis_flex_jcenter"><div class="section_header">LATEST PAGES</div></div><ur class="al_post_list"><li class="al_index_pageList_item al_index_page_seperator"><div class="al_index_post_title_cnt dis_flex"><div class="al_pos_ab al_letter al_index_post_title_letter">提</div><h2 class="al_index_post_title"><a href="/hexo-blog/2020/03/20/%E6%8F%90%E5%8D%87/">提升</a></h2><div class="al_index_post_extra dis_flex"><div class="al_index_post_date al_index_post_extra_item">Mar 20</div><div class="al_index_post_read_time">1 Min Read</div></div></div><div class="al_index_post_excerpt_cnt"><p class="al_index_post_excerpt">直觉认为javascirpt代码执行的时由上到下一行一行执行的。但实际上并不是这样
+
+1
+2
+3
+
+
+console.log(a) //是undefined 而不是 ReferenceError
+var a;
+a = 2
+
+
+包含变量和函数在内的所有声明都会在任何代码被执行前首先被处理 
+
+1
+2
+3
+4
+
+
+function foo(){
+	console.log(a) //是undefined 而不是 ReferenceError
+    var a = 2; 
+}
+
+
+*每个作用域都会进行提升 *
+
+1
+2
+3
+4
+
+
+foo(); // 不是 ReferenceError, 而是 Ty...</p></div><div class="al_index_post_button_cnt dis_flex"><a class="al_button al_button_theme al_index_post_button" href="/hexo-blog/2020/03/20/%E6%8F%90%E5%8D%87/">READ ON</a><a class="al_button al_button_transparent al_index_post_button" href="https://getpocket.com/edit?url=http%3A%2F%2Fyoursite.com%2F%2Fhexo-blog%2F2020%2F03%2F20%2F%25E6%258F%2590%25E5%258D%2587%2F" target="_blank" rel="noopener">READ LATER</a></div></li><li class="al_index_pageList_item al_index_page_seperator"><div class="al_index_post_title_cnt dis_flex"><div class="al_pos_ab al_letter al_index_post_title_letter">函</div><h2 class="al_index_post_title"><a href="/hexo-blog/2020/03/19/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">函数作用域和块级作用域</a></h2><div class="al_index_post_extra dis_flex"><div class="al_index_post_date al_index_post_extra_item">Mar 19</div><div class="al_index_post_read_time">1 Min Read</div></div></div><div class="al_index_post_excerpt_cnt"><p class="al_index_post_excerpt">函数是javascript中最常见的作用域。本质上，声明在一个函数内部的变量或函数会在所处的作用域中’隐藏‘起来。这是有意为之的良好的设计原则。
 但函数不是唯一的作用域。块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指{…}内部）
 
 从ES3开始，try/catch结构在catch分句中具有块级作用域
