@@ -3,11 +3,13 @@
 1
 2
 3
+4
 
 
-console.log(a) //是undefined 而不是 ReferenceError
+console.log(a); 
 var a;
-a = 2
+a = 2 
+//是undefined 而不是 ReferenceError
 
 
 包含变量和函数在内的所有声明都会在任何代码被执行前首先被处理 
@@ -16,23 +18,27 @@ a = 2
 2
 3
 4
+5
 
 
 function foo(){
-	console.log(a) //是undefined 而不是 ReferenceError
+	console.log(a) 
     var a = 2; 
 }
+//是undefined 而不是 ReferenceError
 
 
-*每个作用域都会进行提升 *
+每个作用域都会进行提升
 
 1
 2
 3
 4
+5
 
 
-foo(); // 不是 ReferenceError, 而是 Ty...</p></div><div class="al_index_post_button_cnt dis_flex"><a class="al_button al_button_theme al_index_post_button" href="/hexo-blog/2020/03/20/%E6%8F%90%E5%8D%87/">READ ON</a><a class="al_button al_button_transparent al_index_post_button" href="https://getpocket.com/edit?url=http%3A%2F%2Fyoursite.com%2F%2Fhexo-blog%2F2020%2F03%2F20%2F%25E6%258F%2590%25E5%258D%2587%2F" target="_blank" rel="noopener">READ LATER</a></div></li><li class="al_index_pageList_item al_index_page_seperator"><div class="al_index_post_title_cnt dis_flex"><div class="al_pos_ab al_letter al_index_post_title_letter">函</div><h2 class="al_index_post_title"><a href="/hexo-blog/2020/03/19/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">函数作用域和块级作用域</a></h2><div class="al_index_post_extra dis_flex"><div class="al_index_post_date al_index_post_extra_item">Mar 19</div><div class="al_index_post_read_time">1 Min Read</div></div></div><div class="al_index_post_excerpt_cnt"><p class="al_index_post_excerpt">函数是javascript中最常见的作用域。本质上，声明在一个函数内部的变量或函数会在所处的作用域中’隐藏‘起来。这是有意为之的良好的设计原则。
+foo(); 
+var foo = function ...</p></div><div class="al_index_post_button_cnt dis_flex"><a class="al_button al_button_theme al_index_post_button" href="/hexo-blog/2020/03/20/%E6%8F%90%E5%8D%87/">READ ON</a><a class="al_button al_button_transparent al_index_post_button" href="https://getpocket.com/edit?url=http%3A%2F%2Fyoursite.com%2F%2Fhexo-blog%2F2020%2F03%2F20%2F%25E6%258F%2590%25E5%258D%2587%2F" target="_blank" rel="noopener">READ LATER</a></div></li><li class="al_index_pageList_item al_index_page_seperator"><div class="al_index_post_title_cnt dis_flex"><div class="al_pos_ab al_letter al_index_post_title_letter">函</div><h2 class="al_index_post_title"><a href="/hexo-blog/2020/03/19/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/">函数作用域和块级作用域</a></h2><div class="al_index_post_extra dis_flex"><div class="al_index_post_date al_index_post_extra_item">Mar 19</div><div class="al_index_post_read_time">1 Min Read</div></div></div><div class="al_index_post_excerpt_cnt"><p class="al_index_post_excerpt">函数是javascript中最常见的作用域。本质上，声明在一个函数内部的变量或函数会在所处的作用域中’隐藏‘起来。这是有意为之的良好的设计原则。
 但函数不是唯一的作用域。块作用域指的是变量和函数不仅可以属于所处的作用域，也可以属于某个代码块（通常指{…}内部）
 
 从ES3开始，try/catch结构在catch分句中具有块级作用域
